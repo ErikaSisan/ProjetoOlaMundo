@@ -16,7 +16,7 @@ Este projeto foi desenvolvido com base no curso (React: desenvolvendo em React R
 
 ## Instalação e execução
 
-1. Clone este repositório: `git clone https://github.com/seu-usuario/ola-mundo.git`
+1. Clone este repositório: `git clone https://github.com/ErikaSisan/ProjetoOlaMundo.git`
 2. Acesse a pasta do projeto: `cd ola-mundo`
 3. Instale as dependências: `npm install`
 4. Inicie o servidor de desenvolvimento: `npm start`
