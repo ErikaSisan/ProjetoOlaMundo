@@ -14,6 +14,8 @@ Este projeto foi desenvolvido com base no curso (React: desenvolvendo em React R
 * React Router Dom
 * React Markdown
 
+  URL🚀: https://projeto-ola-mundo-liard.vercel.app/
+
 ## Instalação e execução
 
 1. Clone este repositório: `git clone https://github.com/ErikaSisan/ProjetoOlaMundo.git`
