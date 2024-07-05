@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Olá Mundo!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre o projeto
 
-## Available Scripts
+"Olá Mundo!" é um projeto web que apresenta um banner sobre mim e vários artigos para leitura e aquisição de conhecimento. Também possui uma página "Sobre mim", contando um pouco sobre minha trajetória em programação.
 
-In the project directory, you can run:
+Este projeto foi desenvolvido com base no curso (React: desenvolvendo em React Router com JavaScript da Alura).
 
-### `npm start`
+## Tecnologias utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* React
+* npm
+* JSX
+* React Router Dom
+* React Markdown
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalação e execução
 
-### `npm test`
+1. Clone este repositório: `git clone https://github.com/seu-usuario/ola-mundo.git`
+2. Acesse a pasta do projeto: `cd ola-mundo`
+3. Instale as dependências: `npm install`
+4. Inicie o servidor de desenvolvimento: `npm start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependências
 
-### `npm run build`
+* `@testing-library/jest-dom`:  Para testes de DOM.
+* `@testing-library/react`: Para testes de componentes React.
+* `@testing-library/user-event`: Para simular eventos de usuário em testes.
+* `react`: A biblioteca React.
+* `react-dom`: Para renderizar componentes React no DOM.
+* `react-markdown`: Para renderizar Markdown em componentes React.
+* `react-router-dom`: Para roteamento de páginas.
+* `react-scripts`: Ferramentas para desenvolvimento React.
+* `web-vitals`: Para medir o desempenho da aplicação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contribuições
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Licença
 
-### `npm run eject`
+Este projeto está licenciado sob a licença MIT.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Rotas Aninhadas: Organizando seu App com Eficiência
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+No projeto "Olá Mundo!", as rotas aninhadas são fundamentais para uma organização clara e eficiente da estrutura do aplicativo. O layout principal do site é configurado como uma rota pai, enquanto as diferentes seções do site, como "Artigos" e "Sobre mim", são renderizadas como rotas filhas. Isso permite uma navegação mais intuitiva e um código mais modular.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Exemplo:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```javascript
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-## Learn More
+function AppRoutes() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Menu />
+      <Routes>
+        <Route path="/" element={<PaginaPadrao />}>
+          <Route index element={<Inicio />} />
+          <Route path="sobremim" element={<SobreMim />} />
+        </Route>
+        
+        <Route path="posts/:id/*" element={<Post />} />
+        <Route path="*" element={<NaoEncontrada />} />
+      </Routes>
+      <Rodape />
+    </BrowserRouter>
+  );
+}
+```
+Neste exemplo, a rota raiz ("/") contém o layout padrão (<PaginaPadrao />) e renderiza suas rotas filhas (<Inicio /> e <SobreMim />). As rotas específicas, como a de posts individuais ("posts/:id/*"), e uma rota de fallback para páginas não encontradas ("*"), também são definidas para garantir uma navegação completa e robusta.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Essas rotas aninhadas não só organizam o conteúdo de forma lógica, mas também facilitam a manutenção e a expansão do aplicativo conforme ele cresce.
